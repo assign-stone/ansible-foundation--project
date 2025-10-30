@@ -2,8 +2,6 @@
 
 Automating Configuration Management with Ansible on AWS
 
-![Ansible Banner](https://cdn.jsdelivr.net/gh/assign-stone/ansible-foundation--project/assets/ansible-banner.gif)
-
 ---
 
 ## 📘 Overview
@@ -30,9 +28,6 @@ For this project, **three EC2 instances** were launched within the **same VPC** 
 * **Instance Type:** `t3.medium`
 * **Network:** All instances are in the same **VPC and subnet** for private IP communication.
 * **Authentication:** Configured **SSH key-based access** from the control node to managed nodes.
-
-📸 **Reference Screenshot:**
-![EC2 Instances](Screenshot-1322.png)
 
 ---
 
