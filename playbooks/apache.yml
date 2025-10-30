@@ -1,0 +1,29 @@
+---
+- name: Install and configure Apache web server on Amazon Linux
+  hosts: web
+  become: yes
+  tasks:
+    - name: Update yum cache
+      yum:
+        name: '*'
+        state: latest
+        update_cache: yes
+
+    - name: Install Apache (httpd)
+      yum:
+        name: httpd
+        state: present
+
+    - name: Ensure Apache is running and enabled at boot
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Deploy a basic index.html
+      copy:
+        content: "<html><body><h1>Apache is working on EC2!</h1></body></html>"
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0644'
